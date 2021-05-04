@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--//block 1. Function if-->
+<script>
+    // if - переводиться как "если", данный фунция  принимает в качестве  параметра выражение , которое в конечном этапе будет преобразованно в логическому значению
+    //true or false
+    // else - иначе , выполняет свое тело когда в if конечное значение false
+
+    // операторы сравнения
+    // < - строго меньше (не включая)
+    // > - строго больше
+    // >= - больше или равно
+    //<= - меньше или равно
+    // == - проверка на равенство (не строгое) не проверяет тип данных(все равно на тип данных)
+    // === - проверка на равенство строгое проверяет тип данных (имеет значение)
+    // != - не равно (не  строгое)
+    //!== - не равно(строгое , сравнение вместе с типом)
+    // let userInput = Number(prompt('введите ваш возраст'))
+    //при вводе текста  и попытки его преобразование в число мы получил ошибку Nan, но сама переменная userinput  будет типа данных "number".Поэтому
+    // проверять в условии не получиться , но можно проверит на Nan  функцией isNan()  - т.е по сути проверить на ошибку ввода
+    // if (isNaN(userInput)) {
+    //     alert('NOt  number ')
+    //     } else if (userInput > 18) {
+    //     alert('вам больше 18')
+    // }
+    // else if (userInput ===18 ){
+    //     alert("вам 18")
+    // }
+
+
+    //пример с выводом на страницу
+    // if(+prompt('Какой сейчас год')===2021) {
+    //     document.write('<h1> вы абсолютно правы</h1>')
+    // } else document.write('<h1>вы из будущего или прошлого</h1>')
+    //тернарный оператор (сокращения для условия)
+//(условие) ?       если истина  :если ложь
+        //особенности , может выполнить только одну инструкцию в блоке истину и одну в блоке лжи
+        //что блоки истины/лжи не могут быть пропущено
+        // (+prompt('Какой сейчас год') === 2021 ?   document.write('<h1> вы абсолютно правы</h1>'):document.write('<h1>вы из будущего или прошлого</h1>'))
+    //пример на ввод пароля
+
+//
+    // confirm opens a window with variants yes / no , if chosen yes return -true/no return -false
+   // if (isAdmin ){
+   //     let passWord = prompt('Введите пароль')
+   //     passWord === 'admins' ?
+   //         alert('you are allowed')  : alert('password is wrong')
+   //
+   // } else{
+   //     alert('Dont open this page again!')
+   // }
+</script>
+<script>
+    //1 way
+    // let numb = 12345;
+    // let lasDigit = num % 10;
+    // let newNum = num - lasDigit;
+    // newNum /= 10//1234
+    // console.log(string(lasDigit) + string(newNum));
+    //2 way
+    // let numb = 12345;
+    // let lastDigit = numb % 10;
+    // let newNum = Math.trunc(numb/ 10);
+    // console.log(string(lasDigit) + string(newNum));
+    //3 way
+ //    let numb = 12345;
+ //    let lastDigit = numb % 10;
+ // let num = numb.slice(0, -1) //1234
+ //    console.log(string(lasDigit) + string(num));
+//calculator
+//     let a = 33;
+//     let b = 333;
+//     console.log(`Сумма = ${a + b}`..)
+</script>
+
+<!--Second 2 block-->
+<script>
+   //Логическе операторы
+   //Логическое (или) ||= (+)
+   //Логическое ИЛИ работает следующем образом:если хотя бы один из аргументов true, то возврощает true, иначе - false;
+   // true || true = true
+   // false || true = true
+   // true || false = true
+   // false || false = false
+// короткий цикл вычеслений
+//    let x;
+//    true || (x =1);
+//    console.log(x)    //(undefined, x не присвоен)
+   //let  x ;
+   // false || (x=1);
+   // alert(x); /1;
+
+   //&& возвращает true только когда оба аргумента true , иначе false
+  // Логический оператор && (И)=(*)
+
+  //  true && true = true;
+  //  false && true = false;
+  //  true && false = false;
+  //  false && false = false;
+  //  let hour = 12, minute = 30;
+  //  if ( hour ===12 , minute ===30){
+  //      alert()
+  //  }
+
+   //alert(null && 5); //null
+   //alert( 0 && 'не важно') ; //0 = always equal false
+
+   //alert( 1 && 2 && null && 3) ; //null
+   //alert ( 1 && 2 && 3);  //3
+   //Приоретет у && больше чем у ||
+   //То есть && выполняется раньше чем у ||
+   // ! оператор (no);
+   //let result = !value;
+   //действия сначала приводит к лигческому типу true/false.Затем возвращает противоположное значение.
+   //alert(!true)// false
+   //alert(!false) // true
+   //в частности двойное НЕ используют для преобразования значений к логическому типу:
+   //alert(!!'строка') //true
+   //alert(!!null) //fasle
+   // !! для преобразование в булевое значение
+
+</script>
+<script>
+    //1
+    // let age  = +prompt('введите возраст')
+    // if (age >= 14 && age <=90){
+    //     console.log("inside");
+    // } else{
+    //     console.log('outside');
+    // }
+    //2
+    // if (age <14 || age >90){
+    //     console.log('inside');
+    // }else {
+    //     console.log('out side')
+    // }
+    //
+    // if (!(age >=14 && age <=90)){
+    //     console.log("inside");
+    // } else{
+    //     console.log('out side');
+    // }
+                              //Non-null assertion operator ??
+    // null && true //null
+    //null || true // true
+    // null ?? true // true
+    // "" false
+    let a  = null
+    let b  = ""
+    let c = 42
+    console.log(a ?? 'default a') //default a
+    console.log(b ?? 'default b ') //""(так как пустая строка не null или undefined)
+    console.log( c ?? 42 ) //42
+    //
+    //
+    //
+</script>
+</body>
+</html>
